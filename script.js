@@ -2,6 +2,7 @@
 
 
 function computerPlay() {
+    let wubber = [];
     let random = ["rock", "paper", "scissors"];
     return random[Math.floor(Math.random() * 3)];
 }
@@ -10,16 +11,16 @@ let playerScore = 0;
 let compScore = 0;
 
 
-const buttons = document.querySelectorAll("button");
-buttons.forEach(button => {
-    button.addEventListener("click", function () {
-        playRound(button.value);
-    });
-});
+// const buttons = document.querySelectorAll("button");
+// buttons.forEach(button => {
+//     button.addEventListener("click", function () {
+//         checkWinner(button.value);
+//     });
+// });
 
 
 
-function playRound(playerSelection, computerPlay) {
+function checkWinner(playerSelection, computerPlay) {
     if (playerSelection === "rock") {
         if (computerSelection === "rock") {
             return "Draw!";
@@ -55,13 +56,14 @@ function playRound(playerSelection, computerPlay) {
 }
 
 
-// for (let i = 0; i < 5; i++) {
+for (let i = 0; i < 5; i++) {
 
-//     let playerSelection = prompt("rock, paper, or scissors?")
-//     let computerSelection = computerPlay()
-//     playRound()
-//     console.log(playRound(playerSelection, computerSelection))
-// }
+    let playerSelection = prompt("rock, paper, or scissors?")
+    let computerSelection = computerPlay()
+    checkWinner()
+    console.log(checkWinner(playerSelection, computerSelection))
+
+}
 if (playerScore > compScore) {
     console.log(`you win with ${playerScore} scores!`)
 } if (compScore > playerScore) {
