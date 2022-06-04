@@ -7,7 +7,7 @@ let playerScore = 0;
 let compScore = 0;
 
 function checkWinner(playerSelection, computerSelection) {
-    let computerSelection = computerPlay()
+
     if (playerSelection === "rock") {
         if (computerSelection === "rock") {
             return "Draw!";
@@ -16,7 +16,7 @@ function checkWinner(playerSelection, computerSelection) {
             return "You lose! Paper beats rock.";
 
         } else if (computerSelection === "scissors") {
-            {
+
             ++playerScore
             return "You win! Rock beats scissors.";
         }
@@ -44,8 +44,9 @@ function checkWinner(playerSelection, computerSelection) {
 }
 
 
-for (let i = 0; i < 5; i++) {
 
+for (let i = 0; i < 5; i++) {
+    let computerSelection = computerPlay()
     let playerSelection = prompt("rock, paper, or scissors?")
     checkWinner()
     console.log(checkWinner(playerSelection, computerSelection))
